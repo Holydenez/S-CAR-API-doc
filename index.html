@@ -206,24 +206,20 @@ font-style: italic;
     <a class="up" href="#__Methods">Up</a>
     <pre class="get"><code class="huge"><span class="http-method">get</span> /v1/spareparts/articleNumber</code></pre></div>
     <div class="method-summary"> (<span class="nickname">v1SparepartsArticleNumberGet</span>)</div>
-    <div class="method-notes">Returns  sparepart objects if you get the **full articleNamber**.
+    <div class="method-notes">Returns SparePart  object if you get the full articleNumber
+
+  
 </div>
 
 
 
 
 
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">articleNumber (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Number of sparepart </div>
-    </div>  <!-- field-items -->
 
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
-      <a href="#Sparepart_1">Sparepart_1</a>
+      <a href="#Sparepart">Sparepart</a>
       
     </div>
 
@@ -243,7 +239,7 @@ font-style: italic;
     <h3 class="field-label">Responses</h3>
     <h4 class="field-label">200</h4>
     OK
-        <a href="#Sparepart_1">Sparepart_1</a>
+        <a href="#Sparepart">Sparepart</a>
     <h4 class="field-label">0</h4>
     Unexpected error
         <a href="#Error">Error</a>
@@ -254,7 +250,7 @@ font-style: italic;
     <a class="up" href="#__Methods">Up</a>
     <pre class="get"><code class="huge"><span class="http-method">get</span> /v1/spareparts</code></pre></div>
     <div class="method-summary"> (<span class="nickname">v1SparepartsGet</span>)</div>
-    <div class="method-notes">Returns content of spareparts objects (array) and info about pages. If **articleNumber** is specified, returns only the objects that contain those param. ***None of params are required.***</div>
+    <div class="method-notes">Returns content of spareparts objects (array) and info about pages. If **articleNumber** is specified, returns only the objects that has the same articleNumber or includes a part of the number ( starting from the first element) ***None of params are required.***</div>
 
 
 
@@ -303,7 +299,6 @@ font-style: italic;
   <ol>
     <li><a href="#Error"><code>Error</code></a></li>
     <li><a href="#Sparepart"><code>Sparepart</code></a></li>
-    <li><a href="#Sparepart_1"><code>Sparepart_1</code></a></li>
   </ol>
 
   <div class="model">
@@ -316,17 +311,6 @@ font-style: italic;
   </div>
   <div class="model">
     <h3 class="field-label"><a name="Sparepart">Sparepart - </a> <a class="up" href="#__Models">Up</a></h3>
-    <div class='model-description'>Sparepart object</div>
-    <div class="field-items">
-      <div class="param">articleNumber (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Number of sparepart </div>
-<div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of sparepart </div>
-<div class="param">producer (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Producer of sparepart </div>
-<div class="param">availability (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Availability of sparepart in stock </div>
-<div class="param">price (optional)</div><div class="param-desc"><span class="param-type"><a href="#number">BigDecimal</a></span> Price of sparepart </div>
-    </div>  <!-- field-items -->
-  </div>
-  <div class="model">
-    <h3 class="field-label"><a name="Sparepart_1">Sparepart_1 - </a> <a class="up" href="#__Models">Up</a></h3>
     <div class='model-description'></div>
     <div class="field-items">
       <div class="param">articleNumber (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>

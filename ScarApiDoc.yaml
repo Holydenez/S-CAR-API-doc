@@ -17,16 +17,8 @@ paths:
     get:
 
       description: |
-        Returns  sparepart objects if you get the **full articleNamber**.
+        Returns SparePart  object if you get the full articleNumber
         
-      parameters:
-        -
-          name: articleNumber
-          in: query
-          description: Number of sparepart
-          required: false
-          type: string
-
           
       responses:
         200:
@@ -64,8 +56,7 @@ paths:
     
   /v1/spareparts:
     get:
-      description:  Returns content of spareparts objects (array) and info about pages. If **articleNumber** is specified, returns only the objects that 
-        contain those param. ***None of params are required.***
+      description:  Returns content of spareparts objects (array) and info about pages. If **articleNumber** is specified, returns only the objects that has the same articleNumber or includes a part of the number ( starting from the first element) ***None of params are required.***
         
       parameters:
         -
@@ -133,25 +124,6 @@ paths:
                type: string
    
 
-definitions:
-  Sparepart:
-    description: Sparepart object
-    properties:
-      articleNumber:
-        type: string
-        description: Number of sparepart
-      name:
-        type: string
-        description: Name of sparepart
-      producer:
-        type: string
-        description: Producer of sparepart
-      availability:
-        type: string
-        description: Availability of sparepart in stock 
-      price:
-        type: number
-        description: Price of sparepart
 
  
 
