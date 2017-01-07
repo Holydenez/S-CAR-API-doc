@@ -196,11 +196,58 @@ font-style: italic;
   <div class="method-summary"></div>
   <h4><a href="#Default">Default</a></h4>
   <ul>
+  <li><a href="#v1SparepartsArticleNumberGet"><code><span class="http-method">get</span> /v1/spareparts/articleNumber</code></a></li>
   <li><a href="#v1SparepartsGet"><code><span class="http-method">get</span> /v1/spareparts</code></a></li>
-  <li><a href="#v1SparepartsGet_1"><code><span class="http-method">get</span> /v1/spareparts/</code></a></li>
   </ul>
 
   <h1><a name="Default">Default</a></h1>
+  <div class="method"><a name="v1SparepartsArticleNumberGet"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /v1/spareparts/articleNumber</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">v1SparepartsArticleNumberGet</span>)</div>
+    <div class="method-notes">Returns  sparepart objects if you get the **full articleNamber**.
+</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">articleNumber (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Number of sparepart </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#Sparepart_1">Sparepart_1</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "articleNumber" : "aeiou",
+  "name" : "aeiou",
+  "producer" : "aeiou",
+  "availability" : "aeiou"
+}</code></pre>
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#Sparepart_1">Sparepart_1</a>
+    <h4 class="field-label">0</h4>
+    Unexpected error
+        <a href="#Error">Error</a>
+  </div> <!-- method -->
+  <hr/>
   <div class="method"><a name="v1SparepartsGet"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
@@ -241,53 +288,6 @@ font-style: italic;
     <h4 class="field-label">200</h4>
     OK
         
-    <h4 class="field-label">0</h4>
-    Unexpected error
-        <a href="#Error">Error</a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="v1SparepartsGet_1"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /v1/spareparts/</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">v1SparepartsGet_1</span>)</div>
-    <div class="method-notes">Returns  sparepart objects if you get the **full articleNamber**.
-</div>
-
-
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">articleNumber (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Number of sparepart </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#Sparepart_1">Sparepart_1</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "articleNumber" : "aeiou",
-  "name" : "aeiou",
-  "producer" : "aeiou",
-  "availability" : "aeiou"
-}</code></pre>
-
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#Sparepart_1">Sparepart_1</a>
     <h4 class="field-label">0</h4>
     Unexpected error
         <a href="#Error">Error</a>
