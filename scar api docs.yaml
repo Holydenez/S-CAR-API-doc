@@ -1,0 +1,210 @@
+
+swagger: '2.0'
+info:
+  version: "1"
+  title: S-CAR API
+  description: S-CAR API for scar.ua
+  
+schemes:
+  - https
+basePath: /v1
+paths:
+  
+    
+  /v1/spareparts/НОМЕР:
+
+    
+    get:
+
+      description: |
+        Returns  sparepart objects if you get the **full articleNamber**.
+        
+      parameters:
+        -
+          name: articleNumber
+          in: query
+          description: Number of sparepart
+          required: false
+          type: string
+
+        -
+          name: name
+          in: query
+          description: Name of sparepart
+          required: false
+          type: string
+        -  
+          name: producer
+          in: query
+          description: Producer of sparepart
+          required: false
+          type: string
+
+        -  
+          name: price
+          in: query
+          description: Price of sparepart 
+          required: false
+          type: int
+        -  
+          name: availability
+          in: query
+          description: Availability of sparepart in stock
+          required: false
+          type: string
+    
+
+      responses:
+      
+        200:
+          description: OK
+          schema:
+                 title: Sparepart
+                 type: object
+                 properties:
+                   articleNumber:
+                     type: string
+                   name:
+                     type: string
+                   producer:
+                     type: string
+                   price:
+                     type: int
+                   availability:
+                     type: string
+
+
+                    
+              
+        default:
+          description: Unexpected error
+          
+          schema:
+           title: Error
+           type: object
+           properties:
+             code: 
+               type: string
+             message:
+               type: string
+   
+    
+  /v1/spareparts:
+    get:
+      description:  Returns content of spareparts objects (array) and info about pages. If **articleNumber** is specified, returns only the objects that 
+        contain those param. ***None of params are required.***
+        
+      parameters:
+        -
+          name: page
+          in: query
+          description: The number of page. List of objects is divided
+           into pages according to a size param. ***Default = 0***
+          required: false
+          type: number
+          format: int
+          
+        -
+          name: size
+          in: query
+          description: The size of elements to be in this array of objects. ***Default = 30***
+          required: false
+          type: number
+          format: int
+        -
+          name: articleNumber
+          in: query
+          description: Number of sparepart
+          required: false
+          type: string
+
+        -
+          name: name
+          in: query
+          description: Name of sparepart
+          required: false
+          type: string
+        -  
+          name: producer
+          in: query
+          description: Producer of sparepart
+          required: false
+          type: string
+        -  
+          name: price
+          in: query
+          description: Price of sparepart 
+          required: false
+          type: int
+        -  
+          name: availability
+          in: query
+          description: Availability of sparepart in stock
+          required: false
+          type: string
+
+
+      responses:
+      
+        200:
+          description: OK
+          schema:
+           title: ContentAndPageInfo
+           type: array
+           items:
+               title: Content
+               type: array
+               items:
+                 title: Sparepart
+                 type: object
+                 properties:
+                   articleNumber:
+                     type: string
+                   name:
+                     type: string
+                   producer:
+                     type: string
+                   price:
+                     type: int
+                   availability:
+                     type: string
+
+
+                    
+              
+        default:
+          description: Unexpected error
+          
+          schema:
+           title: Error
+           type: object
+           properties:
+             code: 
+               type: string
+             message:
+               type: string
+   
+
+definitions:
+  Sparepart:
+    description: Sparepart object
+    properties:
+      articleNumber:
+        type: string
+        description: Number of sparepart
+      name:
+        type: string
+        description: Name of sparepart
+      producer:
+        type: string
+        description: Producer of sparepart
+      price:
+        type: int
+        description: Price of sparepart
+      availability:
+        type: string
+        description: Availability of sparepart in stock 
+
+ 
+
+  
