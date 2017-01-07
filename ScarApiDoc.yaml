@@ -42,7 +42,7 @@ paths:
                    producer:
                      type: string
                    price:
-                     type: int
+                     type: number
                    availability:
                      type: string
 
@@ -113,7 +113,7 @@ paths:
                    producer:
                      type: string
                    price:
-                     type: int
+                     type: number
                    availability:
                      type: string
 
@@ -146,12 +146,12 @@ definitions:
       producer:
         type: string
         description: Producer of sparepart
-      price:
-        type: int
-        description: Price of sparepart
       availability:
         type: string
         description: Availability of sparepart in stock 
+      price:
+        type: number
+        description: Price of sparepart
 
  
 
