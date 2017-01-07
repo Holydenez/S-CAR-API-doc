@@ -3,7 +3,7 @@ swagger: '2.0'
 info:
   version: "1"
   title: S-CAR API
-  description: S-CAR API for scar.ua
+  description: S-CAR API for scar.ua. URL https://scarapp.herokuapp.com
   
 schemes:
   - https
@@ -11,7 +11,7 @@ basePath: /v1
 paths:
   
     
-  /v1/spareparts/НОМЕР:
+  /v1/spareparts/:
 
     
     get:
@@ -27,35 +27,8 @@ paths:
           required: false
           type: string
 
-        -
-          name: name
-          in: query
-          description: Name of sparepart
-          required: false
-          type: string
-        -  
-          name: producer
-          in: query
-          description: Producer of sparepart
-          required: false
-          type: string
-
-        -  
-          name: price
-          in: query
-          description: Price of sparepart 
-          required: false
-          type: int
-        -  
-          name: availability
-          in: query
-          description: Availability of sparepart in stock
-          required: false
-          type: string
-    
-
+          
       responses:
-      
         200:
           description: OK
           schema:
@@ -115,31 +88,6 @@ paths:
           name: articleNumber
           in: query
           description: Number of sparepart
-          required: false
-          type: string
-
-        -
-          name: name
-          in: query
-          description: Name of sparepart
-          required: false
-          type: string
-        -  
-          name: producer
-          in: query
-          description: Producer of sparepart
-          required: false
-          type: string
-        -  
-          name: price
-          in: query
-          description: Price of sparepart 
-          required: false
-          type: int
-        -  
-          name: availability
-          in: query
-          description: Availability of sparepart in stock
           required: false
           type: string
 
