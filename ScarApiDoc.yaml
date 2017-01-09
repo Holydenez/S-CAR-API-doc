@@ -11,13 +11,13 @@ basePath: /v1
 paths:
   
     
-  /v1/spareparts/articleNumber:
+  /v1/spareparts/id:
 
     
     get:
 
       description: |
-        Returns SparePart  object if you get the full articleNumber
+        Returns SparePart  object if you get it's id
         
           
       responses:
@@ -27,8 +27,10 @@ paths:
                  title: Sparepart
                  type: object
                  properties:
+                   id:
+                     type: number
                    articleNumber:
-                     type: string
+                     type: integer
                    name:
                      type: string
                    producer:
@@ -73,12 +75,17 @@ paths:
           in: query
           description: The size of elements to be in this array of objects. ***Default = 30***
           required: false
-          type: number
-          format: int
+          type: integer
         -
           name: articleNumber
           in: query
           description: Number of sparepart
+          required: false
+          type: integer
+        -
+          name: producer
+          in: query
+          description: Producer of sparepart
           required: false
           type: string
 
@@ -97,8 +104,10 @@ paths:
                  title: Sparepart
                  type: object
                  properties:
+                   id:
+                     type: number
                    articleNumber:
-                     type: string
+                     type: integer
                    name:
                      type: string
                    producer:
@@ -122,6 +131,42 @@ paths:
                type: string
              message:
                type: string
+    
+  /v1/producers:
+    get:
+      description: Returns **Producers** who have Spareparts with specified articleNumber (or a part of the number)
+      parameters:
+        -
+          name: articleNumber
+          in: query
+          description: Number of sparepart
+          required: true
+          type: integer
+      responses:
+      
+        200:
+          description: OK
+          schema:
+           title: Producers
+           type: array
+           items:
+               title: Producer
+               type: object
+               properties:
+                   producer:
+                     type: string
+        default:
+          description: Unexpected error
+          
+          schema:
+           title: Error
+           type: object
+           properties:
+             code: 
+               type: string
+             message:
+               type: string
+      
    
 
 
